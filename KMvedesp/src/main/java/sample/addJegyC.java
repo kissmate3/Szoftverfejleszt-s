@@ -3,6 +3,7 @@ package sample;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +31,10 @@ public class addJegyC {
     @FXML
     private Label errormark;
 
+    private void addMark(){
+
+    }
+
     @FXML
     void addMark(ActionEvent actionEvent) throws IOException {
         if (mark.getText().isEmpty()) {
@@ -42,7 +47,10 @@ public class addJegyC {
         stage.setScene(new Scene(root));
         stage.show();
         }
+
+
     }
+
 
     @FXML
     void initialize() {

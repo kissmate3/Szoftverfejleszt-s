@@ -16,4 +16,11 @@ public class Student {
     @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int StudentId;
 
+    public String getName() {
+        return name;
+    }
+
+    public int getStudentId() {
+        return StudentId;
+    }
 }

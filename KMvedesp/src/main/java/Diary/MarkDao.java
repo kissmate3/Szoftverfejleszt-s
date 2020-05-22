@@ -18,4 +18,6 @@ public class MarkDao extends GenericJpaDao<KMDiary> {
         }
         return instance;
     }
+
+
 }
