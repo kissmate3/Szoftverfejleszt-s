@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="460.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AlapC">
+    <children>
+      <AnchorPane prefHeight="49.0" prefWidth="460.0" style="-fx-background-color: DeepSkyBlue;">
+         <children>
+              <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Napló">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+        <TableView layoutY="49.0" prefHeight="552.0" prefWidth="375.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="Jegy" />
+                <TableColumn prefWidth="192.00000762939453" text="Megjegyzes" />
+                <TableColumn prefWidth="108.0" text="Időpont" />
+            </columns>
+        </TableView>
+        <Button layoutX="394.0" layoutY="61.0" mnemonicParsing="false" onAction="#addJegy" text="Jegy +" />
+      <Button layoutX="394.0" layoutY="111.0" mnemonicParsing="false" onAction="#deleteMark" prefHeight="26.0" prefWidth="51.0" text="Törlés" />
+      <Button layoutX="394.0" layoutY="163.0" mnemonicParsing="false" onAction="#average" prefHeight="26.0" prefWidth="51.0" text="Átlag" />
+    </children>
+</AnchorPane>
