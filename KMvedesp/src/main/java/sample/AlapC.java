@@ -52,6 +52,7 @@ public class AlapC {
     @FXML
     private TableColumn<KMDiary, ZonedDateTime> created;
 
+
     public void initdata(String username, int studentId) {
         this.username = username;
         this.studentId =studentId;
@@ -81,9 +82,9 @@ public class AlapC {
         Platform.runLater(() -> {
         List<KMDiary> markList = markDao.searchSID(studentId);
 
-        Mark.setCellValueFactory(new PropertyValueFactory<>("Jegy"));
-        comment.setCellValueFactory(new PropertyValueFactory<>("Megjegyzes"));
-        created.setCellValueFactory(new PropertyValueFactory<>("Időpont"));
+        Mark.setCellValueFactory(new PropertyValueFactory<>("Mark"));
+        comment.setCellValueFactory(new PropertyValueFactory<>("comment"));
+        created.setCellValueFactory(new PropertyValueFactory<>("created"));
 
         ObservableList<KMDiary> observableList = FXCollections.observableArrayList();
         observableList.addAll(markList);

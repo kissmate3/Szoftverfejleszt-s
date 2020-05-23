@@ -19,11 +19,11 @@
             </Text>
          </children>
       </AnchorPane>
-        <TableView layoutY="49.0" prefHeight="552.0" prefWidth="364.0">
+        <TableView fx:id="markTable" layoutY="49.0" prefHeight="552.0" prefWidth="364.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="Jegy" />
-                <TableColumn prefWidth="192.00000762939453" text="Megjegyzes" />
-                <TableColumn prefWidth="108.0" text="Időpont" />
+                <TableColumn fx:id="Mark" prefWidth="75.0" text="Jegy" />
+                <TableColumn fx:id="comment" prefWidth="192.00000762939453" text="Megjegyzes" />
+                <TableColumn fx:id="created" prefWidth="108.0" text="Időpont" />
             </columns>
         </TableView>
         <Button layoutX="394.0" layoutY="140.0" mnemonicParsing="false" onAction="#addJegy" text="Jegy +" />
