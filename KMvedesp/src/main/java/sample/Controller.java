@@ -56,6 +56,7 @@ public class Controller {
                 newID=newstudent.getStudentId();
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Alap.fxml"));
                 Parent root = fxmlLoader.load();
+                fxmlLoader.<AlapC>getController().initdata(username.getText(),newID);
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();

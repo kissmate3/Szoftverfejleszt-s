@@ -2,6 +2,7 @@ package Diary;
 
 import util.jpa.GenericJpaDao;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class MarkDao extends GenericJpaDao<KMDiary> {
 
@@ -19,5 +20,8 @@ public class MarkDao extends GenericJpaDao<KMDiary> {
         return instance;
     }
 
+    public List<KMDiary> searchSID(int sId){
+        return entityManager.createQuery("SELECT r FROM KMDiary r WHERE r.studentID= :sId",KMDiary.class).setParameter("sId",sId).getResultList();
+    }
 
 }

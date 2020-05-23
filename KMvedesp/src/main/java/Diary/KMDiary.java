@@ -11,12 +11,9 @@ import java.util.Date;
 @Entity
 
 public class KMDiary{
-
-    @Column
-    private String name;
-
-    @Column
-    private String studentID;
+    
+    @Column(nullable = false)
+    private int studentID;
 
     @Column(nullable = false)
     private int Mark;
