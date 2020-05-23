@@ -24,4 +24,8 @@ public class MarkDao extends GenericJpaDao<KMDiary> {
         return entityManager.createQuery("SELECT r FROM KMDiary r WHERE r.studentID= :sId",KMDiary.class).setParameter("sId",sId).getResultList();
     }
 
+    public int countMark(int sId) {
+        return Math.toIntExact(entityManager.createQuery("SELECT SUM(Mark) FROM KMDiary r WHERE r.studentID= :sId", Long.class).setParameter("sId", sId).getSingleResult());
+    }
+
 }

@@ -27,12 +27,14 @@
             </columns>
         </TableView>
         <Button layoutX="394.0" layoutY="140.0" mnemonicParsing="false" onAction="#addJegy" text="Jegy +" />
-      <Button layoutX="394.0" layoutY="178.0" mnemonicParsing="false" onAction="#deleteMark" prefHeight="26.0" prefWidth="51.0" text="Törlés" />
+      <Button fx:id="removeButton" layoutX="394.0" layoutY="178.0" mnemonicParsing="false" onAction="#deleteMark" prefHeight="26.0" prefWidth="51.0" text="Törlés" />
       <Button layoutX="394.0" layoutY="217.0" mnemonicParsing="false" onAction="#average" prefHeight="26.0" prefWidth="51.0" text="Átlag" />
       <Text layoutX="407.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diák:" />
       <Label fx:id="studentLabel" layoutX="373.0" layoutY="96.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold" size="15.0" />
          </font></Label>
+      <Button layoutX="389.0" layoutY="560.0" mnemonicParsing="false" onAction="#Exit" prefHeight="26.0" prefWidth="51.0" text="Kilép" />
+      <Label fx:id="avgLabel" layoutX="393.0" layoutY="258.0" prefHeight="18.0" prefWidth="51.0" />
     </children>
 </AnchorPane>

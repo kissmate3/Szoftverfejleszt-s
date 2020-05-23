@@ -1,15 +1,11 @@
 package sample;
 
-import java.awt.*;
 import java.io.IOException;
-import java.net.URL;
 import java.time.ZonedDateTime;
 import java.util.List;
-import java.util.ResourceBundle;
 
 import Diary.KMDiary;
 import Diary.MarkDao;
-import Student.StudentDao;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,26 +15,33 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class AlapC {
 
     private String username;
     private int studentId;
     private MarkDao markDao;
+    private int avgo;
+    private int markcount;
+    private double avgc;
+
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
+    private Button removeButton;
 
     @FXML
     private Label studentLabel;
+
+    @FXML
+    private Label avgLabel;
 
     @FXML
     private TableView<KMDiary> markTable;
@@ -67,13 +70,32 @@ public class AlapC {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
+        log.info("Add Mark to Student");
     }
 
-    @FXML
-    void deleteMark(ActionEvent actionEvent) throws IOException {}
 
     @FXML
-    void average(ActionEvent actionEvent) throws IOException {}
+    void Exit(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/sample.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+
+    @FXML
+    void average(ActionEvent actionEvent) throws IOException {
+        avgLabel.setText(String.valueOf(avgc));
+    }
+
+    public void deleteMark(ActionEvent actionEvent) throws IOException {
+        removeButton.setOnAction(event -> {
+            KMDiary selectedItem = markTable.getSelectionModel().getSelectedItem();
+            markTable.getItems().remove(selectedItem);
+            markDao.remove(selectedItem);
+        });
+    }
 
     @FXML
     void initialize() {
@@ -81,7 +103,12 @@ public class AlapC {
 
         Platform.runLater(() -> {
         List<KMDiary> markList = markDao.searchSID(studentId);
-
+        avgo=markList.size();
+            System.out.println(avgo);
+        markcount=markDao.countMark(studentId);
+            System.out.println(markcount);
+        avgc=avg.avgMark(avgo,markcount);
+            System.out.println(avgc);
         Mark.setCellValueFactory(new PropertyValueFactory<>("Mark"));
         comment.setCellValueFactory(new PropertyValueFactory<>("comment"));
         created.setCellValueFactory(new PropertyValueFactory<>("created"));
