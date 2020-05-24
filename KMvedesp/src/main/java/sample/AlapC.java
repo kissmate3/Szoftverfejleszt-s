@@ -81,6 +81,7 @@ public class AlapC {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
+        log.info("Go back to Launcher");
     }
 
 

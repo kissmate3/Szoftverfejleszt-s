@@ -5,7 +5,7 @@ import java.util.List;
 public class avg {
 
     /**
-     * Class,computing the average task per day
+     * Class,computing
      */
     public static double avgMark(int mark, int markcount){
 
