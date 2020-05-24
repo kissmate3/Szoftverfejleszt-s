@@ -50,7 +50,7 @@ public class Controller {
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
-                log.info("Loadin Studnet and Loading Alap");
+                log.info("Loading studnet and Loading Launcher");
             }
             if(studentDao.searchID(username.getText())==null) {
 
@@ -63,7 +63,7 @@ public class Controller {
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
-                log.info("Create a Student and Loading Alap");
+                log.info("Create a new student and loading Launcher");
             }
         }
     }

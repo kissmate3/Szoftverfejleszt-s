@@ -1,9 +1,8 @@
 package sample;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.Date;
-import java.util.ResourceBundle;
+
 
 import Diary.KMDiary;
 import Diary.MarkDao;
@@ -16,18 +15,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class addJegyC {
 
     private int studentId;
     private String username;
     private MarkDao markDao;
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private TextField mark;
@@ -43,14 +38,6 @@ public class addJegyC {
         this.studentId =studentId;
     }
 
-    /*private int getTextw(TextField marK) {
-        try{
-            int marKr=Integer.parseInt(marK.trim());
-            return marKr;
-        }catch(Exception e){
-            return 0;
-        }
-    }*/
 
     private int getInt(TextField evt){
         int marKr=Integer.parseInt(mark.getText());
@@ -77,6 +64,7 @@ public class addJegyC {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
+            log.info("Add mark and comment to Student");
         }
     }
 

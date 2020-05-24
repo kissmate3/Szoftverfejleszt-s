@@ -6,6 +6,9 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
+/**
+ * DAO class for the {@link StudentDao} entity.
+ */
 public class StudentDao extends GenericJpaDao<Student> {
 
     private static StudentDao instance;
@@ -22,10 +25,11 @@ public class StudentDao extends GenericJpaDao<Student> {
         return instance;
     }
 
-    public List<Student> searchStudent(String name){
-        return  entityManager.createQuery("SELECT r FROM Student r WHERE r.name = name", Student.class).getResultList();
-    }
-
+    /**
+     * Finds the studen by name in the adatbase
+     * @param name the users name
+     * @return The student or null if he is not in the adatbase
+     */
     public Student searchID(String name){
         TypedQuery<Student> query=entityManager.createQuery("SELECT r FROM Student r WHERE r.name=:name",Student.class).setParameter("name",name);
         List queryID=query.getResultList();

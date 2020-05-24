@@ -1,11 +1,9 @@
 package sample;
 
-import java.util.List;
-
 public class avg {
 
     /**
-     * Class,computing
+     * Calculating the average of Marks
      */
     public static double avgMark(int mark, int markcount){
 

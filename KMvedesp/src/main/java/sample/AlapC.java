@@ -88,6 +88,7 @@ public class AlapC {
     @FXML
     void average(ActionEvent actionEvent) throws IOException {
         avgLabel.setText(String.valueOf(avgc));
+        log.info("Calculating the average of Marks");
     }
 
     public void deleteMark(ActionEvent actionEvent) throws IOException {
@@ -95,6 +96,7 @@ public class AlapC {
             KMDiary selectedItem = markTable.getSelectionModel().getSelectedItem();
             markTable.getItems().remove(selectedItem);
             markDao.remove(selectedItem);
+            log.info("Delete Mark");
         });
     }
 

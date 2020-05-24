@@ -8,11 +8,20 @@ import javax.persistence.*;
 @Builder
 @Entity
 
+/**
+ * The class that represents the Student
+ */
 public class Student {
 
+    /**
+     * The name of the student.
+     */
     @Column (unique = true)
     private String name;
 
+    /**
+     * The student id
+     */
     @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int StudentId;
 
