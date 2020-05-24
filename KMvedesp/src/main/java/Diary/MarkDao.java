@@ -24,7 +24,7 @@ public class MarkDao extends GenericJpaDao<KMDiary> {
     }
 
     /**
-     * Returns a list of every marks of a student with the id
+     * Returns a list of every marks of a student with the id {@code n}
      *
      * @param sId the student id
      * @return every marks with the id on the Diary
@@ -34,7 +34,7 @@ public class MarkDao extends GenericJpaDao<KMDiary> {
     }
 
     /**
-     * Returns the sum of the student's marks
+     * Returns the sum of the student's marks {@code n}
      *
      * @param sId the student id
      * @return sum of the student's marks

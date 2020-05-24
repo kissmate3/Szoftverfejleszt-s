@@ -107,11 +107,8 @@ public class AlapC {
         Platform.runLater(() -> {
         List<KMDiary> markList = markDao.searchSID(studentId);
         avgo=markList.size();
-            System.out.println(avgo);
         markcount=markDao.countMark(studentId);
-            System.out.println(markcount);
         avgc=avg.avgMark(avgo,markcount);
-            System.out.println(avgc);
         Mark.setCellValueFactory(new PropertyValueFactory<>("Mark"));
         comment.setCellValueFactory(new PropertyValueFactory<>("comment"));
         created.setCellValueFactory(new PropertyValueFactory<>("created"));
